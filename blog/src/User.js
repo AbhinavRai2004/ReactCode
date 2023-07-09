@@ -1,6 +1,34 @@
-function User() {
-    return ( <
-        h1 > User Component < /h1>
-    )
+// function User() {
+//     return ( <
+//         h1 > User Component < /h1>
+//     )
+// }
+// export default User;
+
+
+// RENDER.
+
+import React from 'react'
+class User extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            email: "anil@test.com"
+        }
+    }
+    render() {
+        // console.warn(this.props.name);
+        console.warn("Render method", this.state.email)
+        return ( <
+            div >
+            <
+            h1 > User Component < /h1> <
+            button onClick = {
+                () => this.setState({ email: "sidhu@test.com" })
+            } > Update Email < /button> < /
+            div >
+        )
+    }
 }
+
 export default User;
