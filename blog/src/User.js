@@ -52,3 +52,56 @@
 // }
 
 // export default User;
+
+
+
+
+// Component Reuse.
+
+// function User(props) {
+
+//     return (
+//         <div>
+//             <span>{props.data.name}</span>
+//             <span> {props.data.email}</span>
+//             <span> {props.data.contact}</span>
+//         </div>
+
+//     )
+// }
+
+// export default User;
+
+
+
+// Send data from child to parent.
+
+// function User(props)
+// {
+//     const name="Anil Sidhu"
+//     return(
+//         <div>
+//             <h1>User Name is : </h1>
+//             <button onClick={()=>props.getData(name)} >Click Me</button>
+//         </div>
+//     )
+// }
+
+// export default User;
+
+
+
+
+// ForwardRef in react.
+
+import React,{forwardRef} from 'react'
+function User(props,ref)
+{
+    return(
+        <div>
+            <input ref={ref} type="text" />
+        </div>
+    )
+}
+
+export default forwardRef(User);
