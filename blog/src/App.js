@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
@@ -377,7 +377,7 @@ import style from "./style.module.css";
 // export default App;
 
 // bootstrap in reactJS.
-import { Button, Alert, Navbar, Container, Nav } from "react-bootstrap";
+import { Button, Alert, Navbar, Container, Nav, Table } from "react-bootstrap";
 
 // function App() {
 //     return ( <
@@ -419,23 +419,241 @@ import { Button, Alert, Navbar, Container, Nav } from "react-bootstrap";
 
 // Navbar.
 
-function App() {
-    return ( <
-        div className = "App" >
-        <
-        Navbar bg = "dark"
-        data - bs - theme = "dark" >
-        <
-        Container >
-        <
-        Navbar.Brand href = "#home" > Navbar < /Navbar.Brand> <
-        Nav className = "me-auto" >
-        <
-        Nav.Link href = "#home" > Home < /Nav.Link> <
-        Nav.Link href = "#features" > Features < /Nav.Link> <
-        Nav.Link href = "#pricing" > Pricing < /Nav.Link> <
-        /Nav> <
-        /Container> <
-        /Navbar> </div>
-    );
-}
+// function App() {
+//     return ( 
+//     <div className = "App" >
+//     <Navbar bg="primary" data-bs-theme="dark">
+//         <Container>
+//           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+//           <Nav className="me-auto">
+//             <Nav.Link href="#home">Home</Nav.Link>
+//             <Nav.Link href="#features">Features</Nav.Link>
+//             <Nav.Link href="#pricing">Pricing</Nav.Link>
+//           </Nav>
+//         </Container>
+//       </Navbar>
+
+//       {
+//        [
+//         "primary",
+//         "secondary",
+//         "success",
+//         "danger",
+//         "warning",
+//         "info",
+//         "light",
+//         "dark",
+//     ].map((variant) => ( <
+//         Alert key = { variant }
+//         variant = { variant } >
+//         This is a { variant }
+//         alert— check it out!
+//         </Alert>
+//     ))
+// }
+//     </div>
+//     );
+// }
+
+// export default App;
+
+
+
+// List of array of object and list.
+
+
+//function App(){
+//     // const arr = ["Abhinav","Anjali","Abhishek"];
+//     const users = [
+//            { name: 'Anil', email: 'anil@test.com', contact: '111' },
+//            { name: 'Burce', email: 'bruce@test.com', contact: '222' },
+//            { name: 'Peter', email: 'peter@test.com', contact: '111' },
+//            { name: 'Sam', email: 'sam@test.com', contact: '777' },
+//           ]
+
+//     return(
+//         <div className="App">
+//          <h1>Looping Using Map function</h1>
+//          {
+//             /* arr.map((item) =>
+//             <h2>Name is: {item.name},{item.email}</h2>
+//             ) */
+//             users.map((item)=>
+//             <h2>{item.name} {item.email}</h2>
+//             )
+//          }
+//         </div>
+//     )
+// }
+
+// export default App;
+
+
+
+
+// table using bootstrap.
+
+// import {Table} from 'react-bootstrap'
+// function App() {
+//   const users = [
+//     { name: 'Anil', email: 'anil@test.com', contact: '111' },
+//     { name: 'Burce', email: 'bruce@test.com', contact: '222' },
+//     { name: 'Peter', email: 'peter@test.com', contact: '111' },
+//     { name: 'Sam', email: 'sam@test.com', contact: '777' },
+//   ]
+//   return (
+//     <div className="App">
+//       <h1>List With Bootstrap Table</h1>
+//       <Table striped variant="dark" >
+//         <tbody>
+//         <tr>
+//           <td>Name</td>
+//           <td>Email</td>
+//           <td>Contacts</td>
+//         </tr>
+//         {
+//           users.map((item,i)=>
+//           item.contact==='111'?
+//           <tr key={i}>
+//           <td>{item.name}</td>
+//           <td>{item.email}</td>
+//         <td>{item.contact}</td>
+//         </tr>:null
+//           )
+//         }
+//         </tbody>
+//       </Table>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+// Nested Table In react.
+
+// function App() {
+//   const users = [
+//     {
+//       name: 'Abhinav', email: 'abhinav@test.com', address: [
+//         { hm: '101', city: 'Noida', country: 'India' },
+//         { hm: '10', city: 'Gurgaon', country: 'India' },
+//         { hm: '23', city: 'Noida', country: 'India' },
+//         { hm: '45', city: 'Delhi', country: 'India' },
+//       ]
+//     },
+//     {
+//       name: 'Burce', email: 'bruce@test.com', address: [
+//         { hm: '101', city: 'Noida', country: 'India' },
+//         { hm: '10', city: 'Gurgaon', country: 'India' },
+//         { hm: '23', city: 'Noida', country: 'India' },
+//         { hm: '45', city: 'Delhi', country: 'India' },
+//       ]
+//     },
+//     {
+//       name: 'Peter', email: 'peter@test.com', address: [
+//         { hm: '101', city: 'Noida', country: 'India' },
+//         { hm: '10', city: 'Gurgaon', country: 'India' },
+//         { hm: '23', city: 'Noida', country: 'India' },
+//         { hm: '45', city: 'Delhi', country: 'India' },
+//       ]
+//     },
+//     {
+//       name: 'Sam', email: 'sam@test.com', address: [
+//         { hm: '101', city: 'Noida', country: 'India' },
+//         { hm: '10', city: 'Gurgaon', country: 'India' },
+//         { hm: '23', city: 'Noida', country: 'India' },
+//         { hm: '45', city: 'Delhi', country: 'India' },
+//       ]
+//     },
+//   ]
+//   return (
+//     <div className="App">
+//       <h1>List with Nested Array</h1>
+//       <Table variant="dark"  >
+//         <tbody>
+//           <tr>
+//           <td>S.N</td>
+//             <td>Name</td>
+//             <td>Email</td>
+//             <td>Address</td>
+//           </tr>
+//           {
+//             users.map((item,i)=>
+//             <tr key={i}>
+//                <td>{i+1}</td>
+//             <td>{item.name}</td>
+//           <td>{item.email}</td>
+//             <td>
+//               {/*  */}
+//               <Table variant="dark"  >
+//         <tbody>
+//               {
+//                 item.address.map((data)=>
+
+//                 <tr>
+//                   <td>{data.hm}</td>
+//                   <td>{data.city}</td>
+//                   <td>{data.country}</td>
+//                 </tr>
+//                 )
+//               }
+//               </tbody>
+//               </Table>
+//               {/*  */}
+//             </td>
+//           </tr>
+//           )
+//           }
+//         </tbody>
+//       </Table>
+
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+// react Fragment.
+
+// import Cols from './Cols'
+
+// function App() {
+//   return (
+//     <>
+//       <h1>React Fragment</h1>
+//      <table>
+//        <tbody>
+//          <tr>
+//           <Cols />
+//           <Cols />
+//           <Cols />
+//           <Cols />
+//           <Cols />
+//           <Cols />
+//           <Cols />
+//           <Cols />
+//           <Cols />
+//           <Cols />
+
+//          </tr>
+//        </tbody>
+//      </table>
+//       </>
+      
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+
