@@ -1,21 +1,21 @@
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css"
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import './App.css';
 
 function App() {
 
-
   const apiKey = "f56f24967aaf51182d1d4df628297c6d"
   const [inputCity, setInputCity] = useState("")
   const [data, setData] = useState({})
-
+  // console.log(inputCity);
 
   const getWetherDetails = (cityName) => {
     if (!cityName) return
     const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey
     axios.get(apiURL).then((res) => {
-      console.log("response", res.data)
+      // console.log("response", res.data)
+      // console.log(inputCity)
       setData(res.data)
     }).catch((err) => {
       console.log("err", err)
@@ -23,8 +23,8 @@ function App() {
   }
 
   const handleChangeInput = (e) => {
-    console.log("value", e.target.value)
-    setInputCity(e.target.value)
+    console.log("value", e.target.value);
+    setInputCity(e.target.value);
   }
 
   const handleSearch = () => {

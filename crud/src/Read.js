@@ -53,6 +53,7 @@ const Read = () => {
       <table className={`table ${tabledark}`}>
         <thead>
           <tr>
+
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -80,7 +81,7 @@ const Read = () => {
                           )
                         }
                       >
-                        Edit{" "}
+                        Edit
                       </button>
                     </Link>
                   </td>
