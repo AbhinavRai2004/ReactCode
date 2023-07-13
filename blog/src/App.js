@@ -1,12 +1,12 @@
-import React, { Component, Fragment, useEffect } from "react";
-import { useState } from "react";
-import logo from "./logo.svg";
+// import React, { Component, Fragment, useEffect } from "react";
+// import { useState } from "react";
+// import logo from "./logo.svg";
 import "./App.css";
 import "./style.css";
-import Student from "./Student";
-import Login from "./Login";
-import User from "./User";
-import style from "./style.module.css";
+// import Student from "./Student";
+// import Login from "./Login";
+// import User from "./User";
+// import style from "./style.module.css";
 
 // function App() {
 //   return (
@@ -377,7 +377,7 @@ import style from "./style.module.css";
 // export default App;
 
 // bootstrap in reactJS.
-import { Button, Alert, Navbar, Container, Nav, Table } from "react-bootstrap";
+// import { Button, Alert, Navbar, Container, Nav, Table } from "react-bootstrap";
 
 // function App() {
 //     return ( <
@@ -901,3 +901,107 @@ import { Button, Alert, Navbar, Container, Nav, Table } from "react-bootstrap";
 
 // }
 // export default App;
+
+
+
+
+// import { BrowserRouter ,Routes,Route} from "react-router-dom";
+// import Home from "./components/Home";
+// import About from "./components/About";
+
+// function App(){
+//     return(
+//         <div className="App">
+//             <BrowserRouter>
+//                 <Routes>
+//                     <Route path="/" element={<Home/>}/>
+//                     <Route path="/about" element={<About/>}/>
+//                 </Routes>
+//             </BrowserRouter>
+//         </div>
+//     )
+// }
+
+// export default App;
+
+
+
+
+// import { BrowserRouter ,Routes,Route} from "react-router-dom";
+// import Home from "./components/Home";
+// import About from "./components/About";
+// import Navbar from "./components/Navbar";
+
+// function App(){
+//     return(
+//         <div className="App">
+//             <BrowserRouter>
+//             <Navbar/>
+//                 <Routes>
+//                     <Route path="/" element={<Home/>}/>
+//                     <Route path="/about" element={<About/>}/>
+//                 </Routes>
+//             </BrowserRouter>
+//         </div>
+//     )
+// }
+
+// export default App;
+
+
+
+
+
+// import { BrowserRouter ,Routes,Route,Navigate} from "react-router-dom";
+// import Home from "./components/Home";
+// import About from "./components/About";
+// import Navbar from "./components/Navbar";
+// import Pagenotfound from "./components/Pagenotfound";
+
+// function App(){
+//     return(
+//         <div className="App">
+//             <BrowserRouter>
+//             <Navbar/>
+//                 <Routes>
+//                     <Route path="/" element={<Home/>}/>
+//                     <Route path="/about" element={<About/>}/>
+//                     {/* <Route path="/*" element={<Pagenotfound/>}/> */}
+//                     <Route path ="/*" element={<Navigate to ="/" />} />
+//                 </Routes>
+//             </BrowserRouter>
+//         </div>
+//     )
+// }
+
+// export default App;
+
+
+
+
+
+import { BrowserRouter ,Routes,Route,Navigate} from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Navbar from "./components/Navbar";
+import Pagenotfound from "./components/Pagenotfound";
+import User from "./components/User";
+
+function App(){
+    return(
+        <div className="App">
+            <BrowserRouter>
+            <Navbar/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/user/:name" element={<User/>}/>
+                    {/* <Route path="/*" element={<Pagenotfound/>}/> */}
+                    <Route path ="/*" element={<Navigate to ="/" />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    )
+}
+
+export default App;
