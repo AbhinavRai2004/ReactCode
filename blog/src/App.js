@@ -980,28 +980,298 @@ import "./style.css";
 
 
 
-import { BrowserRouter ,Routes,Route,Navigate} from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/About";
-import Navbar from "./components/Navbar";
-import Pagenotfound from "./components/Pagenotfound";
-import User from "./components/User";
+// import { BrowserRouter ,Routes,Route,Navigate} from "react-router-dom";
+// import Home from "./components/Home";
+// import About from "./components/About";
+// import Navbar from "./components/Navbar";
+// import Pagenotfound from "./components/Pagenotfound";
+// import User from "./components/User";
 
-function App(){
-    return(
-        <div className="App">
-            <BrowserRouter>
-            <Navbar/>
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/about" element={<About/>}/>
-                    <Route path="/user/:name" element={<User/>}/>
-                    {/* <Route path="/*" element={<Pagenotfound/>}/> */}
-                    <Route path ="/*" element={<Navigate to ="/" />} />
-                </Routes>
-            </BrowserRouter>
-        </div>
-    )
-}
+// function App(){
+//     return(
+//         <div className="App">
+//             <BrowserRouter>
+//             <Navbar/>
+//                 <Routes>
+//                     <Route path="/" element={<Home/>}/>
+//                     <Route path="/about" element={<About/>}/>
+//                     <Route path="/user/:name" element={<User/>}/>
+//                     {/* <Route path="/*" element={<Pagenotfound/>}/> */}
+//                     <Route path ="/*" element={<Navigate to ="/" />} />
+//                 </Routes>
+//             </BrowserRouter>
+//         </div>
+//     )
+// }
 
-export default App;
+// export default App;
+
+
+
+
+
+// Routing (2).
+// import './App.css';
+// import React from 'react'
+// import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
+// function App() {
+//   return (
+//     <div className="App">
+//       <Router>
+//         <Link to="/home" >Home</Link>
+//         <br></br>
+//         <Link to="/about" >About</Link>
+//         <Route path="/home" > <Home /></Route>
+//         <Route path="/about" > <About /></Route>
+
+
+//       </Router>
+//     </div>
+//   );
+// }
+
+// function Home() {
+//   return (
+//     <div>
+//       <h1>Home Page</h1>
+//       <p>This is my Home Page</p>
+//     </div>
+//   )
+// }
+// function About() {
+//   return (
+//     <div>
+//       <h1>About Page</h1>
+//       <p>This is my About Page</p>
+//     </div>
+//   )
+// }
+// export default App;
+
+
+
+// Dynamic Routing.
+
+// import './App.css';
+// import React from 'react'
+// import {BrowserRouter as Router,Link,Route} from 'react-router-dom'
+// import User from './User'
+// function App() {
+//   let user=[
+//     {name:'anil',id:1},
+//     {name:'peter',id:2},
+//     {name:'bruce',id:3},
+//     {name:'tony',id:4},
+//   ]
+//   return (
+//     <div className="App">
+//       <Router>
+//       <h1>React Dynamic Routing</h1>
+//       {
+//         user.map((item)=>
+//       <div><Link to={"/user/"+item.id+"/"+item.name}>{item.name}</Link></div>)
+//       }
+//       <Route path="/user/:id/:name" ><User /></Route>
+//       </Router>
+//     </div>
+//   );
+// }
+// export default App;
+
+
+
+
+
+// API(Application Programming Interface) IN reactJs.
+// Get Method.
+
+
+// import React,{useEffect,useState} from 'react'
+
+// function App() {
+
+//   const [users,setUser]=useState([])
+//   useEffect(()=>{
+//     fetch(" http://localhost:3000/posts/1").then((result)=>{
+//       result.json().then((resp)=>{
+//         // console.warn(resp)
+//         setUser(resp)
+//       })
+//     })
+//   },[])
+//   console.warn(users)
+
+//   return (
+//     <div className="App">
+//       <h1>Get API Call </h1>
+//       <table border="1">
+//        <tbody>
+//        <tr>
+//           <td>ID</td>
+//           <td>Name</td>
+//           <td>Email</td>
+//           <td>Mobile</td>
+//         </tr>
+//         {
+//           users.map((item,i)=>
+//             <tr key={i}>
+//             <td>{item.userId}</td>
+//           <td>{item.name}</td>
+//           <td>{item.email}</td>
+//             <td>{item.mobile}</td>
+//           </tr>
+//           )
+//         }
+//        </tbody>
+//       </table>
+//     </div>
+//   );
+// }
+// export default App;
+
+
+
+// Post Method In Api.
+
+// import './App.css';
+// import React, { useEffect, useState } from 'react'
+// function App() {
+//  const [name,setName]=useState("");
+//  const [email,setEmail]=useState("");
+//  const [mobile,setMobile]=useState("");
+// function saveData()
+// {
+//   let data={name,email,mobile}
+// // console.warn(data);
+//   fetch("http://localhost:4000/todo", {
+//     method: "POST",
+//     headers: {
+//       'Accept': 'application/json',
+//       'Content-Type': 'application/json',
+//     },
+//     body:JSON.stringify(data)
+//   }).then((resp)=>{
+//     // console.warn("resp",resp);;
+//     resp.json().then((result)=>{
+//       console.warn("result",result)
+//     })
+//   })
+// }
+//   return (
+//     <div className="App">
+//       <h1>POST API Example </h1>  
+//       <input type="text" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}  /> <br /> <br />
+//       <input type="text" name="email"  value={email} onChange={(e)=>{setEmail(e.target.value)}} /> <br /> <br />
+//       <input type="text" name="mobile"  value={mobile} onChange={(e)=>{setMobile(e.target.value)}}/> <br /> <br />
+//       <button type="button" onClick={saveData} >Save New User</button>
+//     </div>
+//   );
+// }
+// export default App;
+
+
+
+
+// Put Method.
+
+// import './App.css';
+// import React, { useEffect, useState } from 'react'
+// function App() {
+//   const [users, setUser] = useState([])
+//   const [name, setName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [mobile, setMobile] = useState("");
+//   const [userId, setUserId] = useState(null);
+
+
+//   useEffect(() => {
+//     getUsers();
+//   }, [])
+//   function getUsers() {
+//     fetch("http://localhost:4000/todo").then((result) => {
+//       result.json().then((resp) => {
+//         // console.warn(resp)
+//         setUser(resp)
+//         setName(resp[0].name)
+//         setMobile(resp[0].mobile)
+//         setEmail(resp[0].email)
+//         setUserId(resp[0].id)
+
+//       })
+//     })
+//   }
+
+//   function deleteUser(id) {
+//     fetch(`http://localhost:4000/todo/${id}`, {
+//       method: 'DELETE'
+//     }).then((result) => {
+//       result.json().then((resp) => {
+//         console.warn(resp)
+//         getUsers()
+//       })
+//     })
+//   }
+//   function selectUser(id) {
+    
+//     let item = users[id-1]
+//     console.warn("apple",item,users,id)
+//     setName(item.name)
+//     setMobile(item.mobile)
+//     setEmail(item.email)
+//     setUserId(item.id)
+
+    
+//   }
+//   function updateUser() {
+//     let item={name,email,mobile}
+//     fetch(`http://localhost:4000/todo/${userId}`, {
+//       method: 'PUT',
+//       headers:{
+//       'Accept':'application/json',
+//       'Content-Type':'application/json'
+//       },
+//       body:JSON.stringify(item)
+//     }).then((result) => {
+//       result.json().then((resp) => {
+//         console.warn(resp)
+//         getUsers()
+//       })
+//     })
+//   }
+//   return (
+//     <div className="App">
+//       <h1>Delete User With API </h1>
+//       <table border="1" style={{ float: 'left' }}>
+//         <tbody>
+//           <tr>
+//             <td>ID</td>
+//             <td>Name</td>
+//             <td>Email</td>
+//             <td>Mobile</td>
+//             <td>Operations</td>
+//           </tr>
+//           {
+//             users.map((item, i) =>
+//               <tr key={i}>
+//                 <td>{item.id}</td>
+//                 <td>{item.name}</td>
+//                 <td>{item.email}</td>
+//                 <td>{item.mobile}</td>
+//                 <td><button onClick={() => deleteUser(item.id)}>Delete</button></td>
+//                 <td><button onClick={() => selectUser(item.id)}>Update</button></td>
+
+//               </tr>
+//             )
+//           }
+//         </tbody>
+//       </table>
+//       <div>
+//         <input type="text" value={name} /> <br /><br />
+//         <input type="text" value={email} /> <br /><br />
+//         <input type="text" value={mobile} onChange={(e) => { setMobile(e.target.value) }} /> <br /><br />
+//         <button onClick={updateUser} >Update User</button>
+//       </div>
+//     </div>
+//   );
+// }
+// export default App;
